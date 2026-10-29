@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Osama Romeih | أكاديمية تعلم البرمجة من الصفر حتى الاحتراف</title>
+    <meta name="description"
+        content="تعلم البرمجة مع Eng. Osama Romeih - خبرة 5+ سنوات في الفرونت إند والباك إند (Angular, Node.js, Express, .NET). سجل الآن وابدأ رحلتك البرمجية!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Devicon Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.15.1/devicon.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Canvas for Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="nav-brand">
+                <span class="brand-tag">&lt;</span>
+                <span data-i18n="brand_name">Eng. Osama Romeih</span>
+                <span class="brand-tag">/&gt;</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link" data-i18n="nav_about">عن المهندس</a></li>
+                <li><a href="#why" class="nav-link" data-i18n="nav_why">لماذا البرمجة؟</a></li>
+                <li><a href="#roadmap" class="nav-link" data-i18n="nav_roadmap">الخطة الدراسية</a></li>
+                <li><a href="#stack" class="nav-link" data-i18n="nav_stack">التقنيات</a></li>
+                <li><a href="#testimonials" class="nav-link" data-i18n="nav_testimonials">آراء الطلاب</a></li>
+                <li><a href="#faq" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" onclick="toggleLanguage()" title="تغيير اللغة / Switch Language">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text" style="font-size: 0.8rem; font-weight:700; margin-right: 4px;">EN</span>
+                </button>
+
+                <button class="icon-btn" onclick="toggleTheme()" title="تغيير المظهر / Switch Theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+
+                <a href="#register" class="btn btn-primary trigger-enroll" data-i18n="nav_enroll">سجل الآن</a>
+
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-code"></i>
+                    <span data-i18n="hero_badge">أكاديمية تعليم البرمجة للمبتدئين والمحترفين</span>
+                </div>
+
+                <h1>
+                    <span data-i18n="hero_title_prefix">ابدأ رحلتك الاحترافية في</span>
+                    <span class="gradient-text" data-i18n="hero_title_highlight">عالم البرمجة</span><br>
+                    <span data-i18n="hero_title_suffix">مع Eng. Osama Romeih</span>
+                </h1>
+
+                <p class="hero-subtitle" data-i18n="hero_desc">
+                    انضم لأقوى برنامج تدريبي عملي لبناء أساس برمجي متين والانطلاق نحو الاحتراف في تطوير الموقع
+                    والبرمجيات باستخدام أحدث التقنيات Angular, Node.js, Express & .NET.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#register" class="btn btn-primary trigger-enroll" data-i18n="hero_cta_enroll">احجز مقعدك
+                        الآن 🚀</a>
+                    <a href="#roadmap" class="btn btn-outline" data-i18n="hero_cta_roadmap">استكشف الخطة الدراسية 📖</a>
+                </div>
+
+                <div class="hero-stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5" data-suffix="+">5+</span>
+                        <span class="stat-label" data-i18n="stat_exp">سنوات خبرة</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500" data-suffix="+">500+</span>
+                        <span class="stat-label" data-i18n="stat_students">+طالب متدرب</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="30" data-suffix="+">30+</span>
+                        <span class="stat-label" data-i18n="stat_projects">+مشروع عملي</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98" data-suffix="%">98%</span>
+                        <span class="stat-label" data-i18n="stat_success">% نسبة النجاح</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- Floating Tech Badges -->
+                <div class="floating-badge angular">
+                    <i class="devicon-angularjs-plain"></i>
+                    <span>Angular Expert</span>
+                </div>
+                <div class="floating-badge node">
+                    <i class="devicon-nodejs-plain"></i>
+                    <span>Node & Express</span>
+                </div>
+
+                <!-- Code Terminal Sandbox -->
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title" data-i18n="terminal_file">osama_romeih_academy.ts</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-content">
+                        <!-- Typewriter code injected by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Eng. Osama Romeih -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="profile-card">
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user-gear"></i>
+                            </div>
+                        </div>
+                        <h2>Eng. Osama Romeih</h2>
+                        <p class="gradient-text" style="font-weight: 700;">Full-Stack Software Engineer</p>
+                        <span class="experience-tag">خبرة 5+ سنوات في التطوير الفعلي</span>
+
+                        <div class="tech-pills">
+                            <span class="pill">Angular</span>
+                            <span class="pill">Node.js</span>
+                            <span class="pill">Express.js</span>
+                            <span class="pill">.NET Core</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">SQL & Mongo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <div class="badge" data-i18n="about_subtitle">خبرة عملية ونقل حقيقي للمهارات</div>
+                    <h2 class="section-title" style="font-size: 2.3rem; margin: 1rem 0;" data-i18n="about_title">
+                        تعرّف على مدربك: Eng. Osama Romeih
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.2rem;"
+                        data-i18n="about_bio">
+                        مهندس برمجيات ومطور Full-Stack خبرة أكثر من 5 سنوات في بناء وتطوير الأنظمة المعقدة والتطبيقات
+                        السحابية باستخدام Angular في الفرونت إند، و Node.js & Express & .NET في الباك إند.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1rem;" data-i18n="about_passion">
+                        هدف الأكاديمية هو تبسيط المفاهيم البرمجية الصعبة وتحويل الطالب من مجرد كاتب كود إلى مهندس تفكير
+                        حلول (Problem Solver) جاهز لسوق العمل.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                            <h4 data-i18n="about_feat1_title">خبرة Full-Stack شاملة</h4>
+                            <p data-i18n="about_feat1_desc">5 سنوات من العمل الفعلي في المشاريع الضخمة والشركات.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h4 data-i18n="about_feat2_title">تطبيق عملي 100%</h4>
+                            <p data-i18n="about_feat2_desc">لا نكتفي بالنظري، يبني الطالب مشاريع حقيقية تضاف لملفه
+                                الشخصي.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div>
+                            <h4 data-i18n="about_feat3_title">متابعة وتوجيه مباشر</h4>
+                            <p data-i18n="about_feat3_desc">مراجعة الكود، الإجابة على التساؤلات والتوجيه المهني المباشر.
+                            </p>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                            <h4 data-i18n="about_feat4_title">أساسيات وتفكير منطقي</h4>
+                            <p data-i18n="about_feat4_desc">تركيز عميق على حل المشكلات، خوارزميات، وهيكلة البيانات.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Learn & Objectives Section -->
+    <section class="section" id="why" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" data-i18n="why_subtitle">لماذا البرمجة هي بوابتك للمستقبل؟</div>
+                <h2 style="font-size: 2.4rem; margin-top: 0.8rem;" data-i18n="why_title">أهداف وقواعد الدورة التدريبية
+                </h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <span class="why-number">01</span>
+                    <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="why_1_title">التفكير المنطقي وحل
+                        المشكلات</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="why_1_desc">
+                        البرمجة ليست مجرد حفظ أوامر، بل هي طريقة تفكير منطقية لتحليل المشكلات المعقدة وتبسيطها إلى خطوات
+                        حاسوبية.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-number">02</span>
+                    <div class="why-icon"><i class="fas fa-folder-open"></i></div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="why_2_title">بناء ملف أعمال
+                        (Portfolio) قوي</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="why_2_desc">
+                        تتخرج من الأكاديمية ومعك تطبيقات واقعية كاملة (Frontend & Backend) تؤهلك للتقديم على الوظائف
+                        مباشرة.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-number">03</span>
+                    <div class="why-icon"><i class="fas fa-earth-americas"></i></div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="why_3_title">المرونة وفرص العمل
+                        العالمية</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="why_3_desc">
+                        مجال البرمجة يوفر لك إمكانية العمل عن بُعد مع شركات عالمية وبأجور مرتفعة وفرص نمو لا محدودة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Roadmap Section -->
+    <section class="section" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" data-i18n="roadmap_subtitle">خطوة بخطوة من الصفر حتى احتراف بناء التطبيقات</div>
+                <h2 style="font-size: 2.4rem; margin-top: 0.8rem;" data-i18n="roadmap_title">المسار التعليمي الشامل</h2>
+            </div>
+
+            <div class="roadmap-timeline">
+                <!-- Step 1 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">1</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step1_title">المرحلة الأولى: الأساسيات والمنطق البرمجي</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step1_desc">
+                                فهم كيف يعمل الحاسوب، التفكير المنطقي، متغيّرات، شروط، تكرارات، والخوارزميات الأساسية.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">Algorithms</span>
+                                <span class="roadmap-topic-tag">Flowcharts</span>
+                                <span class="roadmap-topic-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">2</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step2_title">المرحلة الثانية: أساسيات وتصميم الويب</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step2_desc">
+                                إتقان HTML5, CSS3, Flexbox/Grid, وتنسيقات الويب الحديثة لبناء واجهات متجاوبة.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">HTML5</span>
+                                <span class="roadmap-topic-tag">CSS3 Modern</span>
+                                <span class="roadmap-topic-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">3</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step3_title">المرحلة الثالثة: JavaScript & Problem Solving</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step3_desc">
+                                تعلم برمجة الويب الحقيقية، DOM Manipulation, ES6+, Async/Await, والأحداث.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">ES6+</span>
+                                <span class="roadmap-topic-tag">Async/Await</span>
+                                <span class="roadmap-topic-tag">DOM & Events</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">4</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step4_title">المرحلة الرابعة: احتراف Angular (Frontend)</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step4_desc">
+                                بناء تطبيقات Single Page Applications باستخدام Angular, TypeScript, RxJS, Component
+                                Architecture, & Routing.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">Angular</span>
+                                <span class="roadmap-topic-tag">TypeScript</span>
+                                <span class="roadmap-topic-tag">RxJS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">5</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step5_title">المرحلة الخامسة: الباك إند Node.js & Express & .NET</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step5_desc">
+                                بناء RESTful APIs, التعامل مع قواعد البيانات SQL & MongoDB, المصادقة JWT, وإدارة
+                                الخوادم.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">Node.js</span>
+                                <span class="roadmap-topic-tag">Express.js</span>
+                                <span class="roadmap-topic-tag">.NET Core</span>
+                                <span class="roadmap-topic-tag">MongoDB & SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="roadmap-step">
+                    <div class="roadmap-marker">6</div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-card">
+                            <h3 data-i18n="step6_title">المرحلة السادسة: مشروع التخرج والاستعداد لسوق العمل</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="step6_desc">
+                                بناء مشروع Full-Stack كامل، رفع المشروع أونلاين، تحضير السيرة الذاتية ومحاكاة المقابلات
+                                الشخصية.
+                            </p>
+                            <div class="roadmap-topics">
+                                <span class="roadmap-topic-tag">Capstone Project</span>
+                                <span class="roadmap-topic-tag">Deployment</span>
+                                <span class="roadmap-topic-tag">Mock Interviews</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Grid Section -->
+    <section class="section" id="stack" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" data-i18n="stack_subtitle">التقنيات الحديثة التي ستتعلمها وتتقنها</div>
+                <h2 style="font-size: 2.4rem; margin-top: 0.8rem;" data-i18n="stack_title">أدوات Eng. Osama Romeih التي
+                    ستصبح أدواتك</h2>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #dd0031;"><i class="devicon-angularjs-plain"></i></div>
+                    <div class="tech-name">Angular</div>
+                    <div class="tech-exp">Frontend Framework</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #68a063;"><i class="devicon-nodejs-plain"></i></div>
+                    <div class="tech-name">Node.js</div>
+                    <div class="tech-exp">Backend Environment</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #ffffff;"><i class="devicon-express-original"></i>
+                    </div>
+                    <div class="tech-name">Express.js</div>
+                    <div class="tech-exp">Web Framework</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #512bd4;"><i class="devicon-dot-net-plain"></i></div>
+                    <div class="tech-name">.NET Core</div>
+                    <div class="tech-exp">Enterprise Backend (1 Year)</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #3178c6;"><i class="devicon-typescript-plain"></i>
+                    </div>
+                    <div class="tech-name">TypeScript</div>
+                    <div class="tech-exp">Typed JavaScript</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #f7df1e;"><i class="devicon-javascript-plain"></i>
+                    </div>
+                    <div class="tech-name">JavaScript ES6+</div>
+                    <div class="tech-exp">Web Logic Language</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #47a248;"><i class="devicon-mongodb-plain"></i></div>
+                    <div class="tech-name">MongoDB</div>
+                    <div class="tech-exp">NoSQL Database</div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper" style="color: #00758f;"><i class="devicon-mysql-plain"></i></div>
+                    <div class="tech-name">SQL Databases</div>
+                    <div class="tech-exp">Relational DBs</div>
+                </div>
+            </div>
+
+            <!-- <div class="users-api-action">
+                <button type="button" class="btn btn-primary users-api-btn" id="open-users-modal">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span data-i18n="users_api_btn">عرض مستخدمي الـ API</span>
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- JSONPlaceholder Users Modal -->
+    <div class="modal-overlay users-modal-overlay" id="users-modal" aria-hidden="true">
+        <div class="modal-container users-modal-container" role="dialog" aria-modal="true"
+            aria-labelledby="users-modal-title" tabindex="-1">
+            <button type="button" class="modal-close" id="users-modal-close" aria-label="إغلاق">
+                <i class="fas fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <div class="users-modal-header">
+                <div class="users-modal-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
+                <div>
+                    <h3 class="modal-title" id="users-modal-title" data-i18n="users_modal_title">مستخدمو JSONPlaceholder
+                    </h3>
+                    <p class="modal-subtitle" data-i18n="users_modal_subtitle">بيانات حقيقية تم جلبها مباشرة من REST API
+                    </p>
+                </div>
+            </div>
+
+            <div class="users-api-meta">
+                <span><i class="fas fa-link" aria-hidden="true"></i> /users</span>
+                <span class="api-status"><span class="status-dot"></span> <span data-i18n="users_api_live">API
+                        مباشر</span></span>
+            </div>
+
+            <div class="users-state" id="users-loading" role="status">
+                <span class="users-spinner" aria-hidden="true"></span>
+                <span data-i18n="users_loading">جاري تحميل المستخدمين...</span>
+            </div>
+
+            <div class="users-state users-error" id="users-error" role="alert" hidden>
+                <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                <span data-i18n="users_error">تعذر تحميل البيانات. تحقق من اتصالك وحاول مرة أخرى.</span>
+                <button type="button" class="btn btn-outline users-retry-btn" id="users-retry"
+                    data-i18n="users_retry">إعادة المحاولة</button>
+            </div>
+
+            <div class="users-table-wrap" id="users-table-wrap" hidden>
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th scope="col" data-i18n="users_col_user">المستخدم</th>
+                            <th scope="col" data-i18n="users_col_email">البريد الإلكتروني</th>
+                            <th scope="col" data-i18n="users_col_phone">الهاتف</th>
+                            <th scope="col" data-i18n="users_col_company">الشركة</th>
+                            <th scope="col" data-i18n="users_col_city">المدينة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" data-i18n="test_subtitle">ماذا يقول طلابنا بعد تجربة التعلم معنا؟</div>
+                <h2 style="font-size: 2.4rem; margin-top: 0.8rem;" data-i18n="test_title">قصص نجاح وآراء الطلاب</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text" data-i18n="test1_text">
+                        الدورة مع Eng. Osama Romeih كانت نقطة تحول في حياتي. أسلوبه في شرح Angular و Node.js مبسط وعملي
+                        جداً، وبنيت أول مشروع كامل بنفسي!
+                    </p>
+                    <div class="student-info">
+                        <div class="student-avatar">أم</div>
+                        <div>
+                            <div class="student-name" data-i18n="test1_name">أحمد مصطفى</div>
+                            <div class="student-role" data-i18n="test1_role">مطور فرونت إند - شركة تقنية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text" data-i18n="test2_text">
+                        كنت خائفاً من الأساسيات والمنطق البرمجي، لكن Eng. Osama Romeih جعل الأمر ممتعاً وسهلاً. الآن
+                        أعمل كـ Full-Stack Developer بثقة كبيرة.
+                    </p>
+                    <div class="student-info">
+                        <div class="student-avatar">سح</div>
+                        <div>
+                            <div class="student-name" data-i18n="test2_name">سارة حسن</div>
+                            <div class="student-role" data-i18n="test2_role">مطورة فول ستاك</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text" data-i18n="test3_text">
+                        المتابعة والمراجعة الدورية للكود جعلتني أتعلم الممارسات الصحيحة Clean Code. أفضل تجربة تعلّم
+                        خضتها على الإطلاق.
+                    </p>
+                    <div class="student-info">
+                        <div class="student-avatar">عخ</div>
+                        <div>
+                            <div class="student-name" data-i18n="test3_name">عمر خالد</div>
+                            <div class="student-role" data-i18n="test3_role">مهندس برمجيات</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section" id="faq" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" data-i18n="faq_subtitle">إجابات على كل ما يدور في ذهنك</div>
+                <h2 style="font-size: 2.4rem; margin-top: 0.8rem;" data-i18n="faq_title">الأسئلة الشائعة</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        <span data-i18n="faq1_q">هل أحتاج لخبرة سابقة في البرمجة للانضمام؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p data-i18n="faq1_a">لا على الإطلاق! الدورة مصممة خصيصاً لتبدأ معك من الصفر تماماً وتدريجياً
+                            حتى تصل لمستويات متقدمة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq2_q">ما هي مدة البرنامج التدريبي؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p data-i18n="faq2_a">يمتد البرنامج على مدار عدة أسابيع مع محاضرات تفاعلية مباشرة وتطبيقات عملية
+                            وأسئلة أسبوعية.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq3_q">هل المحاضرات مسجلة أم بث مباشر؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p data-i18n="faq3_a">البرنامج يجمع بين اللقاءات المباشرة (Live) للمناقشة والشرح المباشر مع
+                            توفير تسجيلات كاملة يمكنك الرجوع إليها في أي وقت.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq4_q">هل سأحصل على شهادة ومشروع تخرج؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p data-i18n="faq4_a">نعم، يحصل كل طالب على شهادة إتمام بعد تسليم مشروع التخرج النهائي ومراجعته
+                            تقنياً من Eng. Osama Romeih.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA Banner Section -->
+    <section class="section" id="register">
+        <div class="container">
+            <div class="cta-banner">
+                <h2 data-i18n="cta_title">جاهز لبدء رحلتك في عالم البرمجة اليوم؟</h2>
+                <p data-i18n="cta_desc">المقاعد محدودة لضمان جودة المتابعة والتفاعل الشخصي مع Eng. Osama Romeih. احجز
+                    مقعدك الآن!</p>
+                <button class="btn btn-primary trigger-enroll" style="font-size: 1.1rem; padding: 1rem 2.5rem;"
+                    data-i18n="cta_btn">
+                    سجل بياناتك للالتحاق 🚀
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal Popup -->
+    <div class="modal-overlay" id="registration-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+
+            <div id="form-state">
+                <h3 class="modal-title" data-i18n="modal_title">انضم لدفعة التأسيس البرمجي</h3>
+                <p class="modal-subtitle" data-i18n="modal_subtitle">املأ بياناتك وسنتواصل معك فوراً عبر الواتساب لإكمال
+                    إجراءات التسجيل.</p>
+
+                <form id="enroll-form">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="form_name">الاسم الكامل</label>
+                        <input type="text" class="form-control" id="student-name" placeholder="مثال: محمد أحمد"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="student-email" placeholder="name@example.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="form_phone">رقم الهاتف / الواتساب</label>
+                            <input type="tel" class="form-control" id="student-phone" placeholder="010XXXXXXXX"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="form_track">المسار المطلوب</label>
+                        <select class="form-control" id="student-track" required>
+                            <option value="أساسيات البرمجة و Web Fundamentals" data-i18n="track_basics">أساسيات البرمجة
+                                و Web Fundamentals</option>
+                            <option value="احتراف Angular & Frontend" data-i18n="track_angular">احتراف Angular &
+                                Frontend</option>
+                            <option value="مسار Full-Stack الشامل" data-i18n="track_fullstack">مسار Full-Stack الشامل
+                                (Angular + Node + .NET)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;"
+                        data-i18n="form_submit">
+                        تأكيد التسجيل وانضمام 🎯
+                    </button>
+                </form>
+            </div>
+
+            <div class="success-state" id="success-state">
+                <div class="success-icon"><i class="fas fa-check"></i></div>
+                <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;" data-i18n="success_title">تم استلام طلبك بنجاح! 🎉
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;" data-i18n="success_desc">
+                    شكراً لاهتمامك بالتعلم مع Eng. Osama Romeih. سيتم التواصل معك خلال ساعات عبر الواتساب لتزويدك بكافة
+                    تفاصيل الدورة ورابط المجموعة.
+                </p>
+                <a href="#" target="_blank" class="btn btn-primary" id="whatsapp-direct-btn" data-i18n="success_btn">
+                    التواصل المباشر عبر الواتساب
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Direct WhatsApp Button -->
+    <a href="https://wa.me/201092225678" target="_blank" class="floating-whatsapp" title="تواصل مباشر عبر الواتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-brand" style="display: inline-flex;">
+                        <span class="brand-tag">&lt;</span>
+                        <span data-i18n="brand_name">Eng. Osama Romeih</span>
+                        <span class="brand-tag">/&gt;</span>
+                    </a>
+                    <p data-i18n="footer_desc">أكاديمية Eng. Osama Romeih لتعليم البرمجة وتطوير الشغوفين ليصبحوا مهندسي
+                        برمجيات محترفين.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank" class="social-btn" title="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/201092225678" target="_blank" class="social-btn" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading" data-i18n="footer_links_title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about" data-i18n="nav_about">عن المهندس</a></li>
+                        <li><a href="#why" data-i18n="nav_why">لماذا البرمجة؟</a></li>
+                        <li><a href="#roadmap" data-i18n="nav_roadmap">الخطة الدراسية</a></li>
+                        <li><a href="#stack" data-i18n="nav_stack">التقنيات</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading" data-i18n="nav_testimonials">آراء الطلاب</h4>
+                    <ul class="footer-links">
+                        <li><a href="#testimonials" data-i18n="nav_testimonials">قصص نجاح</a></li>
+                        <li><a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#register" data-i18n="nav_enroll">التسجيل</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading" data-i18n="footer_contact_title">تواصل معنا</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope" style="color: var(--accent-cyan); margin-left: 6px;"></i>
+                            osamaromih2020@gmail.com
+                        </li>
+                        <li><i class="fas fa-phone" style="color: var(--accent-cyan); margin-left: 6px;"></i>
+                            +201092225678</li>
+                        <li><i class="fas fa-location-dot" style="color: var(--accent-cyan); margin-left: 6px;"></i>
+                            Egypt / Remote Mentorship</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 Eng. Osama Romeih.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
